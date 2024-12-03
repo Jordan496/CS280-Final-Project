@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Group8FinalProject</name>
+    </assembly>
+    <members>
+        <member name="T:Group8FinalProject.Combo">
+            <summary>
+            Combo class is the structure of a Combo instance 
+            </summary>
+        </member>
+        <member name="P:Group8FinalProject.Combo.AddOn1">
+            <summary>
+            these are the automatic properties that contain the AddOn state for each combo
+            </summary>
+        </member>
+        <member name="P:Group8FinalProject.Combo.Drink">
+            <summary>
+             these are the class properties that will hold the data for the drink and Course Side data
+            </summary>
+        </member>
+        <member name="P:Group8FinalProject.Combo.ComboText">
+            <summary>
+            this is the class property that will hold the text details of each combo a specific order includes
+            </summary>
+        </member>
+        <member name="P:Group8FinalProject.Combo.ComboPrice">
+            <summary>
+            this is the class property that will hold the price of the individual combo ordered
+            </summary>
+        </member>
+        <member name="P:Group8FinalProject.Combo.ComboChoice">
+            <summary>
+            this is the property variable that will hold the ID for the combo selcted
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.Combo.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            main constructor for the Combo Class
+            </summary>
+            <param name="addon1">addon form data</param>
+            <param name="addon2">addon form data</param>
+            <param name="addon3">addon form data</param>
+            <param name="addon4">addon form data</param>
+            <param name="addon5">addon form data</param>
+            <param name="addon6">addon form data</param>
+            <param name="addon7">addon form data</param>
+            <param name="addon8">addon form data</param>
+            <param name="drink">drink form data</param>
+            <param name="drinksize">drink form data</param>
+            <param name="courseside">course side form data</param>
+            <param name="coursesidesize">course side form data</param>
+            <param name="combochoice">combo form data</param>
+        </member>
+        <member name="M:Group8FinalProject.Combo.#ctor">
+            <summary>
+            default constructor of the combo class
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.Combo.CalculateComboPrice">
+            <summary>
+            this function takes the Combo data and calculates the price
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.Combo.CalculateComboText">
+            <summary>
+            this function takes the combo data and creates the output string for this instance's combo
+            </summary>
+        </member>
+        <member name="T:Group8FinalProject.ComboList">
+            <summary>
+            ComboList Class acts as a list of Combo Class Instances (Indexers CH13)
+            </summary>
+        </member>
+        <member name="F:Group8FinalProject.ComboList.combos">
+            <summary>
+            this code block declares the list of Combo class objects
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.ComboList.Add(Group8FinalProject.Combo)">
+            <summary>
+            this function creates a new Combo and adds it to the list of combo instances
+            </summary>
+            <param name="combo">The Combo instance to be added</param>
+        </member>
+        <member name="M:Group8FinalProject.ComboList.Add(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+             this function creates a new Combo from form data and adds it to the list of combo instances
+            </summary>
+            <param name="addon1">addon form data</param>
+            <param name="addon2">addon form data</param>
+            <param name="addon3">addon form data</param>
+            <param name="addon4">addon form data</param>
+            <param name="addon5">addon form data</param>
+            <param name="addon6">addon form data</param>
+            <param name="addon7">addon form data</param>
+            <param name="addon8">addon form data</param>
+            <param name="drink">addon form data</param>
+            <param name="drinksize">drink form data</param>
+            <param name="courseside">drink form data</param>
+            <param name="coursesidesize">courseside form data</param>
+            <param name="combochoice">courseside form data</param>
+        </member>
+        <member name="M:Group8FinalProject.ComboList.GetComboByIndex(System.Int32)">
+            <summary>
+            This function grabs a requested Combo from the ComboList depending on its index
+            </summary>
+            <param name="i">the index of the ComboList requested</param>
+            <returns></returns>
+        </member>
+        <member name="M:Group8FinalProject.ComboList.Remove(Group8FinalProject.Combo)">
+            <summary>
+            This function removes a Combo instance from the ComboList
+            </summary>
+            <param name="combo">The Combo instance to be deleted</param>
+        </member>
+        <member name="M:Group8FinalProject.ComboList.CalculateOrderPrice">
+            <summary>
+            This function gets the cost of every combo a customer ordered and adds them up.
+            </summary>
+            <returns>returns the total cost of the customer's order</returns>
+        </member>
+        <member name="T:Group8FinalProject.frmOrder">
+            <summary>
+            This class holds the events and functions of the windows form
+            </summary>
+        </member>
+        <member name="F:Group8FinalProject.frmOrder.restaurantOrders">
+            <summary>
+            This code block initializes the customer list
+            </summary>
+        </member>
+        <member name="F:Group8FinalProject.frmOrder.MaxCustomerID">
+            <summary>
+            These variables hold the current index to control the indexing in the OrderList and ComboList classes
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.#ctor">
+            <summary>
+            This function initializes the form
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.OnChanged(System.Object,System.EventArgs)">
+            <summary>
+            This event handler handles changes that need to be made per course selecting options (The trigger of this event is when a main course radiobutton is changed)
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.btn_Add_To_Order(System.Object,System.EventArgs)">
+            <summary>
+            this is the logic to add a combo order to the ComboList
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.btn_Clear_Food_Selection(System.Object,System.EventArgs)">
+            <summary>
+            This function clears the selections in the Windows form
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.btn_Pay_For_Order(System.Object,System.EventArgs)">
+            <summary>
+            This functioinchanges the form to allow the customer to insert payment and pickup information
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parmeter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.btn_Create_Order(System.Object,System.EventArgs)">
+            <summary>
+            this function creates a new customer order instance for the customer to make an order
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.OnDrinkChanged(System.Object,System.EventArgs)">
+            <summary>
+            This function enables and disables drink sizes when requested
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.onAddOnChanged(System.Object,System.EventArgs)">
+            <summary>
+            This function enables and disables the course side buttons when requested
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.ResetDefaults">
+            <summary>
+            This function resets UI elements to their default state
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.OnCustomerComboBoxChange(System.Object,System.EventArgs)">
+            <summary>
+            This function handles the event for if the Customer Combobox is changed
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.OnComboNumberComboBoxChanged(System.Object,System.EventArgs)">
+            <summary>
+            This function handles the event for if the Combo Combobox is changed
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.btn_Complete_Order_Payment(System.Object,System.EventArgs)">
+            <summary>
+            This function processes an order when payment is received
+            </summary>
+            <param name="sender">event parameter</param>
+            <param name="e">event parameter</param>
+        </member>
+        <member name="F:Group8FinalProject.frmOrder.components">
+            <summary>
+             Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.Dispose(System.Boolean)">
+            <summary>
+             Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Group8FinalProject.frmOrder.InitializeComponent">
+            <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Group8FinalProject.Order">
+            <summary>
+            this class keeps track of data specific to each customer's order
+            </summary>
+        </member>
+        <member name="P:Group8FinalProject.Order.PickupTime">
+            <summary>
+            These are the data properties pertaining to each customer's order
+            </summary>
+        </member>
+        <member name="F:Group8FinalProject.Order.customerOrder">
+            <summary>
+            This code initializes a new ComboList for every customer
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.Order.#ctor">
+            <summary>
+            Default Constructor for the Order Class
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.Order.#ctor(System.String)">
+            <summary>
+            this is the main constructor used for the Order Class
+            </summary>
+            <param name="customerName">Customer Name form data</param>
+        </member>
+        <member name="M:Group8FinalProject.Order.AddData(System.DateTime,System.Decimal,System.Decimal,System.Int32)">
+            <summary>
+            This function gets the remaining information that wasn't input into the form when the constructor was run
+            </summary>
+            <param name="pickuptime">pickup time form data</param>
+            <param name="ordertotal">order total form data</param>
+            <param name="orderbudget">order budget form data</param>
+            <param name="ordertype">order type form data</param>
+        </member>
+        <member name="T:Group8FinalProject.OrderList">
+            <summary>
+            OrderList Class acts as a list of Order Class Instances (Indexers CH13)
+            </summary>
+        </member>
+        <member name="F:Group8FinalProject.OrderList.orders">
+            <summary>
+            this code block declares the list of Order class objects
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.OrderList.Add(Group8FinalProject.Order)">
+            <summary>
+            this function creates a new Order and adds it to the list of order instances
+            </summary>
+            <param name="order">The Order instance to be added</param>
+        </member>
+        <member name="M:Group8FinalProject.OrderList.Add(System.String)">
+            <summary>
+            this function creates a new Order from form data and adds it to the list of order instances
+            </summary>
+            <param name="customerName">Customer Name form data</param>
+        </member>
+        <member name="M:Group8FinalProject.OrderList.GetOrderByIndex(System.Int32)">
+            <summary>
+            This function grabs a requested Order from the OrderList depending on its index
+            </summary>
+            <param name="i">the index of the OrderList requested</param>
+            <returns></returns>
+        </member>
+        <member name="M:Group8FinalProject.OrderList.Remove(Group8FinalProject.Order)">
+            <summary>
+            This function removes a Order instance from the OrderList
+            </summary>
+            <param name="order">The Order instance to be deleted</param>
+        </member>
+        <member name="M:Group8FinalProject.Program.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Group8FinalProject.ApplicationConfiguration">
+            <summary>
+             Bootstrap the application configuration.
+            </summary>
+        </member>
+        <member name="M:Group8FinalProject.ApplicationConfiguration.Initialize">
+            <summary>
+             Bootstrap the application as follows:
+             <code>
+             global::System.Windows.Forms.Application.EnableVisualStyles();
+             global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+             global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            </code>
+            </summary>
+        </member>
+    </members>
+</doc>
